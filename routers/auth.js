@@ -8,6 +8,11 @@ router.get("/login", (req, res) => {
   res.render('./auth/login');
 });
 
+// EditUsers GET route
+router.get("/EditUsers", (req, res) => {
+  res.render('./auth/EditUsers');
+});
+
 // login POST route
 router.post("/login",
 
@@ -28,7 +33,6 @@ router.get("/logout", (req, res) => {
 router.get("/signup", (req, res) => {
   res.render('./auth/signup');
 });
-
 // signup POST route
 router.post("/signup", async (req, res) => {
   try {
