@@ -7,6 +7,9 @@ const express = require("express"),
 router.get("/login", (req, res) => {
   res.render('./auth/login');
 });
+router.get("/storeoffer", (req, res) => {
+  res.render('./auth/storeoffer');
+});
 
 // login POST route
 router.post("/login",
