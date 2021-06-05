@@ -13,12 +13,25 @@
     <link rel="stylesheet" href="/sources/bootstrap.css">
     <title>Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
 <div class="container">
     <%- include ('../partails/navbar') -%>
-
+    <!-- flash messages -->
+    <div class="container" style="width: 75%; margin: auto;">
+        <% if(error && error.length > 0){ %>
+            <div style="margin-top: 10px;" class="alert alert-danger" role="alert">
+            <%= error %>
+                </div>
+        <% } %>
+            <% if(success && success.length > 0) { %>
+                <div style="margin-top: 10px;" class="alert alert-success" role="alert">
+                    <%= success %>
+            </div>
+            <% } %>
+    </div>
+<!-- flash messages end-->
     <div class="row">
         <div class="col-sm-4 ">
             <select class="form-select" name="store" id="store">

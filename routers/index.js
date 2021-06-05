@@ -200,6 +200,7 @@ router.get("/favourite/store/:id", middleware.isLogin, async (req, res) => {
     product: store
   });
   await fav.save();
+  req.flash("success", "Mağaza favoriye eklendi");
   res.redirect("/stores");
 });
 
