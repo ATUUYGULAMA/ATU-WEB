@@ -642,7 +642,7 @@
 	}
 
 	header .dealer-login .sign-out{
-		background: url("../images/sign_out_icon.png") no-repeat 14px center;
+		background: url("../images/atu.png") no-repeat 14px center;
 		padding: 0 0 0 38px;
 		font-weight: normal;
 	}
@@ -659,7 +659,7 @@
 		font-family: DroidSans, Arial, Verdana, sans-serif;
 		font-size: 14px;
 		font-weight: bold;
-		color: #ffbc12;
+		color: white;
 		text-transform: uppercase;
 		background: url("../images/rounded_link_box_repeat_hover.gif") repeat-x;
 		border-radius: 3px;
