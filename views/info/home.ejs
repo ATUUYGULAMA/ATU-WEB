@@ -88,6 +88,9 @@
                             <% if(currentUser.userType === 'store') { %>
                               <li><a class="dropdown-item" href="/addproduct"> Ürün Ekle </a></li>
                             <% }  %>
+                            <% if(currentUser.userType === 'buyer') { %>
+                                <li><a class="dropdown-item" href="/myads"> İlanlarım </a></li>
+                              <% }  %>
                             <li><a class="dropdown-item" href="/favourites"> Favoriler </a></li>
                             <li><a class="dropdown-item" href="/logout"> Çıkış Yap </a></li>
                           </ul>

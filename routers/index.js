@@ -25,6 +25,20 @@ router.get("/products", async (req, res) => {
   res.render('./info/products', { products });
 });
 
+router.get("/offer/:id", middleware.isLogin, async (req, res) => {
+  const postId = req.params.id;
+  const post = await Post.findOne({ _id: postId });
+  const posts = await Post.find({});
+  const offers = await Offer.find({ post }).populate("createdOffer");
+
+  res.render('./auth/offers', { post , offers, posts});
+});
+
+router.get("/myads", middleware.isLogin, async (req, res) => {
+  const posts = await Post.find({});
+  res.render('./auth/myads', { posts });
+});
+
 // Store Get route
 router.get("/stores", async (req, res) => {
   const stores = await User.find({userType: "store"});
@@ -188,7 +202,6 @@ router.get("/myprofile", middleware.isLogin , async (req, res) => {
 
 router.get("/favourites", middleware.isLogin, async (req, res) => {
   const favourites = await Favourite.find({ user: req.user });
-  console.log(favourites);
   res.render("./info/favoriler", { favourites });
 });
 
@@ -228,7 +241,6 @@ router.put("/myprofile/edit", middleware.isLogin, upload.single("profileImage"),
     }
     await userUpdated.save();
     req.flash("success", "Bilgileri başarıyla güncellendi");
-    console.log(userUpdated);
     res.redirect("/myprofile");
   } catch (error) {
     console.log(error.message);

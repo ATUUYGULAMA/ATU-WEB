@@ -8,15 +8,6 @@ router.get("/login", (req, res) => {
   res.render('./auth/login');
 });
 
-
-router.get("/offers", (req, res) => {
-  res.render('./auth/offers');
-});
-
-router.get("/myads", (req, res) => {
-  res.render('./auth/myads');
-});
-
 // login POST route
 router.post("/login",
 
